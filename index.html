@@ -70,9 +70,9 @@
     <div id="ui-layer">
         <!-- Vandiep -->
         <div class="guide">
-            🖐 <b>Open:</b> Explode &nbsp;|&nbsp; 🫶 <b>Heart:</b> Love &nbsp;|&nbsp; ✊ <b>Fist:</b> Tree
+            🖐 <b>Open:</b> Mở ra bất ngờ nò &nbsp;|&nbsp; 🫶 <b>Heart:</b> Love u Trúc Mai &nbsp;|&nbsp; ✊ <b>Fist:</b> Cây thông noel nò
         </div>
-        <button id="btnStart" onclick="startSystem()">START MAGIC</button>
+        <button id="btnStart" onclick="startSystem()">Khám phá thui nò bé iuu</button>
     </div>
 
     <!-- Vandiep -->
@@ -291,6 +291,7 @@
             ctx.fillStyle = '#FFD700'; ctx.textAlign = 'center';
             ctx.shadowColor = "#FF0000"; ctx.shadowBlur = 40; 
             ctx.fillText("MERRY CHRISTMAS", 512, 130);
+            ctx.fillText("THương Em pé Trúc Mai nò", 512, 170);
             const tex = new THREE.CanvasTexture(canvas);
             const mat = new THREE.MeshBasicMaterial({ map: tex, transparent: true, blending: THREE.AdditiveBlending });
             titleMesh = new THREE.Mesh(new THREE.PlaneGeometry(60, 15), mat);
