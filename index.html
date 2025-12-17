@@ -392,29 +392,41 @@
 
             // I LOVE YOU TEXT Vandiep
           const loveCanvas = document.createElement('canvas');
-        loveCanvas.width = 1024;
-        loveCanvas.height = 300;
-        
-        const lCtx = loveCanvas.getContext('2d');
-        lCtx.font = 'bold 100px "Segoe UI", sans-serif';
-        lCtx.fillStyle = '#FF69B4';
-        lCtx.textAlign = 'center';
-        lCtx.shadowColor = "#FF1493";
-        lCtx.shadowBlur = 40;
-        
-        lCtx.fillText("Trúc Mai, I LOVE YOU ❤️", 512, 160);
-        
-        const loveTex = new THREE.CanvasTexture(loveCanvas);
-        const loveMat = new THREE.MeshBasicMaterial({
-          map: loveTex,
-          transparent: true,
-          blending: THREE.AdditiveBlending
-        });
-        
-        loveMesh = new THREE.Mesh(new THREE.PlaneGeometry(70, 18), loveMat);
-        loveMesh.position.set(0, 0, 20);
-        loveMesh.visible = false;
-        scene.add(loveMesh);
+            loveCanvas.width = 1024;
+            loveCanvas.height = 360;   // tăng chiều cao để thoải mái
+            
+            const lCtx = loveCanvas.getContext('2d');
+            lCtx.textAlign = 'center';
+            lCtx.fillStyle = '#FF69B4';
+            lCtx.shadowColor = "#FF1493";
+            lCtx.shadowBlur = 40;
+            
+            // Dòng trên
+            lCtx.font = 'bold 110px "Segoe UI", sans-serif';
+            lCtx.fillText("Trúc Mai", 512, 140);
+            
+            // Dòng dưới
+            lCtx.font = 'bold 95px "Segoe UI", sans-serif';
+            lCtx.fillText("I LOVE YOU ❤️", 512, 240);
+            
+            const loveTex = new THREE.CanvasTexture(loveCanvas);
+            loveTex.needsUpdate = true;
+            
+            const loveMat = new THREE.MeshBasicMaterial({
+              map: loveTex,
+              transparent: true,
+              blending: THREE.AdditiveBlending
+            });
+            
+            loveMesh = new THREE.Mesh(
+              new THREE.PlaneGeometry(70, 25), // tăng chiều cao plane
+              loveMat
+            );
+            
+            loveMesh.position.set(0, 0, 20);
+            loveMesh.visible = false;
+            scene.add(loveMesh);
+
 
         }
 
